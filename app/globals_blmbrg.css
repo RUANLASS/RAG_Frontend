@@ -1,0 +1,393 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background-color: #0e1113; /* Bloomberg charcoal */
+    color: #c7cdd1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Navigation Styles */
+  .navbar {
+    background: #0a0c0d;
+    border-bottom: 1px solid #1b1f22;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    height: 56px;
+  }
+  
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 600;
+    margin-right: 2rem;
+  }
+  
+  .nav-icon {
+    font-size: 1.5rem;
+    color: #fbb300; /* Bloomberg orange */
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #8c9398;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .nav-link:hover {
+    color: #fbb300;
+  }
+  
+  /* Main Container */
+  .main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    height: calc(100vh - 56px);
+  }
+  
+  /* Chat Interface Styles */
+  .chat-container {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+  }
+  
+  .chat-main {
+    flex: 1;
+    background: #141719;
+    border-radius: 8px;
+    border: 1px solid #1f2428;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  /* Chat Header */
+  .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #1f2428;
+    margin-bottom: 1rem;
+  }
+  
+  .chat-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  
+  .settings-button {
+    background: #191d20;
+    border: 1px solid #2a3035;
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    color: #cbd5e1;
+  }
+  
+  .settings-button:hover {
+    background: #272c30;
+  }
+  
+  /* Message List Styles */
+  .message-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .message-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .message-list::-webkit-scrollbar-track {
+    background: #0c0f11;
+  }
+  
+  .message-list::-webkit-scrollbar-thumb {
+    background: #3c444b;
+    border-radius: 4px;
+  }
+  
+  .message-list::-webkit-scrollbar-thumb:hover {
+    background: #4b545d;
+  }
+  
+  .empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #6b7280;
+  }
+  
+  /* Messages */
+  .message {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .avatar-user {
+    background: #1e2530;
+    color: #4da3ff;
+  }
+  
+  .avatar-assistant {
+    background: #2e1c00;
+    color: #fbb300;
+  }
+  
+  .message-content {
+    flex: 1;
+  }
+  
+  .message-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .message-sender {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: #ffffff;
+  }
+  
+  .message-time {
+    font-size: 0.75rem;
+    color: #9ca3af;
+  }
+  
+  .message-text {
+    color: #c7cdd1;
+    line-height: 1.6;
+    white-space: pre-wrap;
+  }
+  
+  /* Loading */
+  .loading-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9ca3af;
+    font-size: 0.875rem;
+  }
+  
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #3c444b;
+    border-top-color: #fbb300;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Sources */
+  .source-card {
+    background: #191d20;
+    border: 1px solid #2a3035;
+    border-radius: 6px;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s;
+  }
+  
+  .source-card:hover {
+    background: #22272b;
+  }
+  
+  .source-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fbb300;
+  }
+  
+  /* Chat Input */
+  .chat-input-container {
+    margin-top: 1rem;
+  }
+  
+  .chat-textarea {
+    width: 100%;
+    min-height: 60px;
+    padding: 0.75rem;
+    padding-right: 3rem;
+    border: 1px solid #2a3035;
+    border-radius: 8px;
+    background: #101315;
+    color: #d1d5db;
+    font-size: 0.875rem;
+    resize: none;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .chat-textarea:focus {
+    border-color: #fbb300;
+  }
+  
+  .send-button {
+    width: 44px;
+    height: 44px;
+    background: #fbb300;
+    border: none;
+    border-radius: 6px;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    align-self: flex-end;
+  }
+  
+  .send-button:hover:not(:disabled) {
+    background: #e0a300;
+  }
+  
+  .send-button:disabled {
+    background: #4b4b4b;
+    cursor: not-allowed;
+  }
+  
+  /* Settings Panel */
+  .settings-panel {
+    width: 320px;
+    background: #141719;
+    border: 1px solid #1f2428;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  
+  .settings-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+  }
+  
+  .setting-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #d1d5db;
+  }
+  
+  /* Evaluation Page */
+  .eval-title {
+    color: #fbb300;
+  }
+  
+  /* Metric Cards */
+  .metric-card {
+    background: #141719;
+    border: 1px solid #1f2428;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  
+  .metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  
+  .metric-change.positive {
+    color: #00d26a; /* Bloomberg green */
+  }
+  
+  .metric-change.negative {
+    color: #ff4136; /* Bloomberg red */
+  }
+  
+  /* Charts */
+  .chart-card {
+    background: #141719;
+    border: 1px solid #1f2428;
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  
+  .chart-title {
+    color: #ffffff;
+  }
+  
+  /* Table */
+  .table-card {
+    background: #141719;
+    border: 1px solid #1f2428;
+    border-radius: 8px;
+  }
+  
+  .comparison-table thead {
+    background: #1a1e21;
+  }
+  
+  .comparison-table tbody tr:hover {
+    background: #1c2023;
+  }
+  
+  .comparison-table tbody tr.highlight {
+    background: #2a1f00;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    background: #2b1f00;
+    color: #fbb300;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+  
